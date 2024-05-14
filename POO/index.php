@@ -1,27 +1,42 @@
 <?php
-class Carro {
-    public $modelo;
-    public $ano;
-    public $quilometragem;
+// Classe base
+class Animal {
+    public $nome;
+    public $idade;
 
-    // Método construtor
-    public function __construct($modelo, $ano, $quilometragem) {
-        $this->modelo = $modelo;
-        $this->ano = $ano;
-        $this->quilometragem = $quilometragem;
+    public function __construct($nome, $idade) {
+        $this->nome = $nome;
+        $this->idade = $idade;
     }
 
-    // Método para fazer o carro andar
-    public function andar($distancia) {
-        // Simulação de andar: incrementa a quilometragem
-        $this->quilometragem += $distancia;
-        echo "O carro andou " . $distancia . " km.<br>";
-        echo "Nova quilometragem: " . $this->quilometragem . " km.<br>";
+    public function fazerBarulho() {
+        echo "Barulho genérico do animal";
     }
 }
 
-// Criando um objeto carro
-$meuCarro = new Carro("Toyota Corolla", 2020, 10000);
+// Classe derivada (herda de Animal)
+class Cachorro extends Animal {
+    public function fazerBarulho() {
+        echo "Au Au";
+    }
+}
 
-// Fazendo o carro andar
-$meuCarro->andar(50); // Andar 50 km
+// Classe derivada (herda de Animal)
+class Gato extends Animal {
+    public function fazerBarulho() {
+        echo "Miau";
+    }
+}
+
+// Criando objetos das classes derivadas
+$cachorro = new Cachorro("Rex", 3);
+$gato = new Gato("Whiskers", 2);
+
+// Chamando o método fazerBarulho() de cada objeto
+echo $cachorro->nome . " faz: ";
+$cachorro->fazerBarulho();
+echo "<br>";
+
+echo $gato->nome . " faz: ";
+$gato->fazerBarulho();
+?>
