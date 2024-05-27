@@ -1,42 +1,31 @@
 <?php
-// Classe base
-class Animal {
-    public $nome;
-    public $idade;
 
-    public function __construct($nome, $idade) {
-        $this->nome = $nome;
-        $this->idade = $idade;
+class Oficina {
+    public $pao;
+    public $leite;
+    public $manteiga;
+
+    public function __construct($pao = 0, $leite = 0, $manteiga = 0) {
+        $this->pao = $pao;
+        $this->leite = $leite;
+        $this->manteiga = $manteiga;
     }
 
-    public function fazerBarulho() {
-        echo "Barulho genérico do animal";
+    public function compra($pao = 0, $leite = 0, $manteiga = 0) {
+        if ($pao == 0 && $leite == 0 && $manteiga == 0) {
+            echo "Oq precisa hoje?\n";
+        } else {
+            if ($pao == 0) {
+                echo "Gostaria de quantos Kg de pão? " . $pao . "\n";
+            }
+            if ($leite == 0) {
+                echo "Gostaria de quantos L de leite? " . $leite . "\n";
+            }
+            if ($manteiga == 0) {
+                echo "Vai levar uma manteiga? " . $manteiga . "\n";
+            }
+        }
     }
 }
 
-// Classe derivada (herda de Animal)
-class Cachorro extends Animal {
-    public function fazerBarulho() {
-        echo "Au Au";
-    }
-}
-
-// Classe derivada (herda de Animal)
-class Gato extends Animal {
-    public function fazerBarulho() {
-        echo "Miau";
-    }
-}
-
-// Criando objetos das classes derivadas
-$cachorro = new Cachorro("Rex", 3);
-$gato = new Gato("Whiskers", 2);
-
-// Chamando o método fazerBarulho() de cada objeto
-echo $cachorro->nome . " faz: ";
-$cachorro->fazerBarulho();
-echo "<br>";
-
-echo $gato->nome . " faz: ";
-$gato->fazerBarulho();
 ?>
