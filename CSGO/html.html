@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercado CS:GO</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1>Mercado CS:GO</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.php">Home</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="main container">
+        <h2>Orçamento: $<?php echo $orcamento; ?></h2>
+        <form method="post" action="">
+            <label for="orcamento">Informe o orçamento inicial:</label>
+            <input type="number" id="orcamento" name="orcamento" value="<?php echo $orcamento; ?>" min="0"><br><br>
+            <div class="clearfix">
+                <?php foreach ($precos as $item => $preco): ?>
+                    <div class="item">
+                        <h3><?php echo ucfirst($item); ?></h3>
+                        <img src="CSGO/img/<?php echo $item; ?>.png" alt="<?php echo $item; ?>" class="item-img">
+                        <p>Preço: $<?php echo $preco; ?></p>
+                        <input type="number" name="<?php echo $item; ?>" value="0" min="0">
+                    </div>
+                <?php endforeach; ?>
+            </div>
+            <input type="submit" value="Comprar">
+        </form>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>Mercado CS:GO - Desenvolvido por Matheus Patricio</p>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

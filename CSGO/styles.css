@@ -1,0 +1,118 @@
+/* Adicione os estilos para os ícones do mercado e o contêiner de zoom */
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #77aaff 3px solid;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+header ul {
+    padding: 0;
+    list-style: none;
+}
+
+header li {
+    float: left;
+    display: inline;
+    padding: 0 20px 0 20px;
+}
+
+header #branding {
+    float: left;
+}
+
+header #branding h1 {
+    margin: 0;
+}
+
+header nav {
+    float: right;
+    margin-top: 10px;
+}
+
+.header-title {
+    padding: 10px 20px;
+    background: #35424a;
+    color: #ffffff;
+}
+
+.main {
+    padding: 20px;
+    background: #fff;
+}
+
+.mercado {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.item {
+    text-align: center;
+    float: left;
+    width: 24%;
+    padding: 10px;
+    margin: 1%;
+    border: 1px solid #ccc;
+    background: #fff;
+}
+
+.item img {
+    width: 100px; /* Tamanho dos ícones do mercado */
+    height: auto;
+    cursor: pointer;
+}
+
+/* Estilos para o zoom */
+#zoom {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+#zoom img {
+    max-width: 400px;
+    height: auto;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+footer {
+    padding: 20px;
+    margin-top: 20px;
+    color: #fff;
+    background-color: #333;
+    text-align: center;
+}
