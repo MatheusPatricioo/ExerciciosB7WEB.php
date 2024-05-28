@@ -7,7 +7,7 @@ class Rifles {
     private int $galil = 0;
     private int $famas = 0;
     private int $scout = 0;
-7    private int $awp = 0;
+    private int $awp = 0;
 
     public function addM4A1S(int $qnt) {
         $this->m4a1s += $qnt;
